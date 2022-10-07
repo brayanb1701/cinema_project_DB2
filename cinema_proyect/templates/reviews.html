@@ -1,0 +1,282 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends "layout.html" %}
+	<!-- header-section-starts -->
+{% block body %}
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a href="/"><div class="hm"><i class="home1"></i><i class="home2"></i></div></a></li>
+					<li><a class="active" href="/reviews"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					
+					{% if ident %}
+					<li><a href="/consulta_recargas"><div class="bk"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					<li><a href="/consulta_tiquetes"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li>
+					
+
+					{% endif %}
+					<li><a href="/contact"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+				</ul>
+			</div>
+		<div class="main">
+		<div class="review-content">
+			<div class="top-header span_top">
+				<div class="logo">
+					<a href="/"><img src="{{url_for('static', filename='images/logo.png')}}" alt="" /></a>
+					<p>Movie Theater</p>
+				</div>
+				<div class="search" style="border: 0; margin-top: 0;">
+					{% if ident %}
+<a href="logout" class="b-home" style="margin-top: 0; float: right;">Log Out</a>
+{% else %}
+<a href="/log_in" class="b-home" style="margin-top: 0; float: right;">Log In</a>
+{% endif %}
+				</div>
+<div class="search v-search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="reviews-section">
+				<h3 class="head">Películas Disponibles</h3>
+					<div class="col-md-9 reviews-grids">
+						{% if movies %}
+						{% for movie in movies %}
+						<div class="review">
+							<div class="movie-pic">
+								<a href="/single/{{movie.0}}"><img src="{{url_for('static', filename='images/'~movie.0~'.jpg')}}" alt="" /></a>
+							</div>
+							<div class="review-info">
+								<a class="span" href="/single/{{movie.0}}">{{movie.3}}</a>
+								<p class="dirctr"><a href="">{{movie.9}}, </a>{{movie.7}}</p>	
+								
+								
+								<div class="clearfix"></div>
+								<p class="ratingview c-rating">Calificación de nuestros lectores:</p>
+								
+								<p class="ratingview c-rating">								
+								&nbsp; {{movie.11}}/5</p>
+								<div class="clearfix"></div>
+
+								<p class="info">Clasificación:&nbsp;&nbsp;&nbsp; &nbsp; {{movie.1}}</p>
+								<p class="info">Dirección: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{movie.9}}</p>
+								<p class="info">Genero:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{movie.4}}</p>
+								<p class="info">Duración:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {{movie.5}}</p>
+								<p class="info">Idioma:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {{movie.6}}</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						{% endfor %}
+						{% endif %}
+						
+					</div>
+					<div class="col-md-3 side-bar">
+						<div class="featured">
+							<h3>Featured Today in Movie Reviews</h3>
+							<ul>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f1.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f2.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f3.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f4.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f5.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<li>
+									<a href="/review"><img src="{{url_for('static', filename='images/f6.jpg')}}" alt="" /></a>
+									<p>lorem movie review</p>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+						</div>
+						
+						<div class="entertainment">
+							<h3>Featured Today in Entertainment</h3>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f6.jpg')}}" alt="" /></a>
+								</li>
+								<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+								
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f5.jpg')}}" alt="" /></a>
+								</li>
+									<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+							
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f3.jpg')}}" alt="" /></a>
+								</li>
+								<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+								
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f4.jpg')}}" alt="" /></a>
+								</li>
+								<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+								
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f2.jpg')}}" alt="" /></a>
+								</li>
+								<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+							
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<ul>
+								<li class="ent">
+									<a href="/review"><img src="{{url_for('static', filename='images/f1.jpg')}}" alt="" /></a>
+								</li>
+								<li>
+									<a href="/review">Watch ‘Bombay Velvet’ trailer during WC match</a>
+								
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+						</div>
+						<div class="might">
+				<h4>You might also like</h4>
+				<div class="might-grid">
+					<div class="grid-might">
+						<a href="/review"><img src="{{url_for('static', filename='images/mi.jpg')}}" class="img-responsive" alt=""> </a>
+					</div>
+					<div class="might-top">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+						<a href="/review">Lorem Ipsum <i> </i></a>
+					</div>
+				<div class="clearfix"></div>
+				</div>
+				<div class="might-grid">
+					<div class="grid-might">
+						<a href="/review"><img src="{{url_for('static', filename='images/mi1.jpg')}}" class="img-responsive" alt=""> </a>
+					</div>
+					<div class="might-top">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+						<a href="/review">Lorem Ipsum <i> </i></a>
+					</div>
+				<div class="clearfix"></div>
+				</div>
+				<div class="might-grid">
+					<div class="grid-might">
+						<a href="/review"><img src="{{url_for('static', filename='images/mi2.jpg')}}" class="img-responsive" alt=""> </a>
+					</div>
+					<div class="might-top">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+						<a href="/review">Lorem Ipsum <i> </i></a>
+					</div>
+				<div class="clearfix"></div>
+				</div>
+				<div class="might-grid">
+					<div class="grid-might">
+						<a href="/review"><img src="{{url_for('static', filename='images/mi3.jpg')}}" class="img-responsive" alt=""> </a>
+					</div>
+					<div class="might-top">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+						<a href="/review">Lorem Ipsum <i> </i></a>
+					</div>
+				<div class="clearfix"></div>
+				</div>
+			</div>
+			<!---->
+				<div class="grid-top">
+				<h4>Archives</h4>
+				<ul>
+					<li><a href="/review">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a></li>
+					<li><a href="/review">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</a></li>
+					<li><a href="/review">When an unknown printer took a galley of type and scrambled it to make a type specimen book. </a> </li>
+					<li><a href="/review">It has survived not only five centuries, but also the leap into electronic typesetting</a> </li>
+					<li><a href="/review">Remaining essentially unchanged. It was popularised in the 1960s with the release of </a> </li>
+					<li><a href="/review">Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </a> </li>
+					<li><a href="/review">Software like Aldus PageMaker including versionsof Lorem Ipsum.</a> </li>
+				</ul>
+				</div>
+				<!---->
+
+					</div>
+
+					<div class="clearfix"></div>
+			</div>
+			</div>
+		<div class="review-slider">
+			 <ul id="flexiselDemo1">
+			{% if movies %}
+			{% for movie in movies %}
+			<li><img src="{{url_for('static', filename='images/'~movie.0~'.jpg')}}" alt=""/></li>
+			{% endfor %}
+			{% endif %}
+		</ul>
+			<script type="text/javascript">
+		$(window).load(function() {
+			
+		  $("#flexiselDemo1").flexisel({
+				visibleItems: 6,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: false,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 2
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems: 3
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			});
+		</script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery.flexisel.js')}}"></script>	
+		</div>		
+	{% endblock %}
+{% block theend %}
+	</div>
+	<div class="clearfix"></div>
+	</div>
+</body>
+</html>
+{% endblock %}

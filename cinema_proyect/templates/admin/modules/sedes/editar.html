@@ -1,0 +1,43 @@
+<div class="content" style="min-height: 480px">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row" >
+                    
+                    <div class="col col-lg-12">
+                      <div class="card" >
+                        <div class="card-header">
+                            <strong>Editar Sede</strong>
+                        </div>
+                            <div class="card-body">
+                                <form method="post" action="/edicion/{{module}}/{{datos.0}}">
+                                    <div class="row form-group">
+                                              <div class="col-md-4"><label for="nombre" class="form-control-label">Nombre: </label>
+                                                <input type="text" name="nombre" placeholder="Nombre Sede" value="{{datos.0 }}" readonly class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="zona" class="form-control-label">Zona: </label>
+                                                <input type="text" name="zona" placeholder="Zona" value="{{datos.1 }}" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="h_a" class="form-control-label">Hora Apertura: </label>
+                                                <input type="time" name="h_a" value="{{ datos.2 }}" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="h_c" class="form-control-label">Hora cierre: </label>
+                                                <input type="time" name="h_c" value="{{datos.3 }}" class="form-control">
+                                              </div>
+                                            
+                                            <div class="form-actions form-group col-md-3" style="padding-top: 30px;"><button type="submit" class="btn btn-success">Actualizar</button></div>
+                                     </div>
+                                     
+                                 </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+  <!-- Content Header (Page header) -->
+  

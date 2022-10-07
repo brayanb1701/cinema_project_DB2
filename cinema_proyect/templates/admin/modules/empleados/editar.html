@@ -1,0 +1,73 @@
+<div class="content" style="min-height: 480px">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row" >
+                    
+                    <div class="col col-lg-12">
+                      <div class="card" >
+                        <div class="card-header">
+                            <strong>Editar Empleado</strong>
+                        </div>
+                            <div class="card-body">
+                                <form method="post" action="/edicion/{{module}}/{{datos.0}}">
+                                    <div class="row form-group">
+                                      <div class="col-md-4"><label for="ident" class="form-control-label">Identificacion: </label>
+                                        <input type="text" name="ident" value="{{datos.0}}" placeholder="Identificacion" readonly class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="fecha_n" class="form-control-label">Fecha Nacimiento: </label>
+                                        <input type="date" name="fecha_n" value="{{datos.1}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="edad" class="form-control-label">Edad: </label>
+                                        <input type="text" name="edad" value="{{datos.2}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="nombres" class="form-control-label">Nombres: </label>
+                                        <input type="text" name="nombres" value="{{datos.6}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="apellidos" class="form-control-label">Apellidos: </label>
+                                        <input type="text" name="apellidos" value="{{datos.7}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="celular" class="form-control-label">Celular: </label>
+                                        <input type="text" name="celular" value="{{datos.3}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="email" class="form-control-label">Email: </label>
+                                        <input type="text" name="email" value="{{datos.4}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="direccion" class="form-control-label">Direccion: </label>
+                                        <input type="text" name="direccion" value="{{datos.5}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="fecha_i" class="form-control-label">Fecha Inicio: </label>
+                                        <input type="text" name="fecha_i" value="{{datos.10}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="cargo" class="form-control-label">Cargo: </label>
+                                        <input type="text" name="cargo" value="{{datos.11}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="salario" class="form-control-label">Salario: </label>
+                                        <input type="text" name="salario" value="{{datos.12}}" class="form-control">
+                                      </div>
+                                              <div class="col-md-4"><label for="n_sede" class="form-control-label">Nombre Sede: </label>
+                                                <select name="n_sede" id="n_sede" class=" form-control">
+                                                  <option value="">Seleccione</option>
+                                                  {% for cine in cines %}
+                                                  <option value="{{cine.0}}" {% if cine.0==datos.13 %} selected {% endif %}>{{cine.0}}</option>
+                                                  {% endfor %}
+                                                </select>
+                                              
+                                              </div>
+                                              <input type="hidden" name="contraseña" value="{{datos.8}}" class="form-control">
+                                            <div class="form-actions form-group col-md-3" style="padding-top: 30px;"><button type="submit" class="btn btn-success">Actualizar</button></div>
+                                     </div>
+                                     
+                                 </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+  <!-- Content Header (Page header) -->
+  

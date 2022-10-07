@@ -1,0 +1,43 @@
+<div class="content" style="min-height: 480px">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row" >
+                    
+                    <div class="col col-lg-12">
+                      <div class="card" >
+                        <div class="card-header">
+                            <strong>Editar Comida</strong>
+                        </div>
+                            <div class="card-body">
+                                <form method="post" action="/edicion/{{module}}/{{datos.0}}">
+                                    <div class="row form-group">
+                                      <div class="col-md-4"><label for="codigo" class="form-control-label">Codigo: </label>
+                                        <input type="text" name="codigo" placeholder="Codigo" value="{{datos.0}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="valor" class="form-control-label">Valor: </label>
+                                        <input type="text" name="valor" placeholder="Valor" value="{{datos.1}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="nombre" class="form-control-label">Nombre: </label>
+                                        <input type="text" name="nombre" value="{{datos.2}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="decripcion" class="form-control-label">Descripcion: </label>
+                                        <textarea name="descripcion" class="form-control">{{datos.3}}</textarea>
+                                      </div>
+                                              
+                                            <div class="form-actions form-group col-md-3" style="padding-top: 30px;"><button type="submit" class="btn btn-success">Actualizar</button></div>
+                                     </div>
+                                     
+                                 </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+  <!-- Content Header (Page header) -->
+  

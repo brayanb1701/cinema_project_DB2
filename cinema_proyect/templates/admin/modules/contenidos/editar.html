@@ -1,0 +1,63 @@
+<div class="content" style="min-height: 480px">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row" >
+                    
+                    <div class="col col-lg-12">
+                      <div class="card" >
+                        <div class="card-header">
+                            <strong>Editar Contenido</strong>
+                        </div>
+                            <div class="card-body">
+                                <form method="post" action="/edicion/{{module}}/{{datos.0}}">
+                                    <div class="row form-group">
+                                      <div class="col-md-4"><label for="codigo" class="form-control-label">Codigo: </label>
+                                        <input type="text" name="codigo" placeholder="Codigo" value="{{datos.0}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="clasificacion" class="form-control-label">Clasificación: </label>
+                                        <input type="text" name="clasificacion" placeholder="clasificacion" value="{{datos.1}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="pais" class="form-control-label">Pais: </label>
+                                        <input type="text" name="pais" value="{{datos.2}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="titulo" class="form-control-label">Titulo: </label>
+                                        <input type="text" name="titulo" value="{{datos.3}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="genero" class="form-control-label">Género: </label>
+                                        <input type="text" name="genero" value="{{datos.4}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="duracion" class="form-control-label">Duración: </label>
+                                        <input type="time" name="duracion" value="{{datos.5}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="idioma" class="form-control-label">Idioma: </label>
+                                        <input type="text" name="idioma" value="{{datos.6}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="fecha_e" class="form-control-label">Fecha Estreno: </label>
+                                        <input type="date" name="fecha_e" value="{{datos.7}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="tipo" class="form-control-label">Tipo: </label>
+                                        <input type="text" name="tipo" value="{{datos.8}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="director" class="form-control-label">Director: </label>
+                                        <input type="text" name="director" value="{{datos.9}}" class="form-control">
+                                      </div>
+                                      <div class="col-md-4"><label for="sinopsis" class="form-control-label">Sinopsis: </label>
+                                        <textarea name="sinopsis"  class="form-control">{{datos.10}}</textarea>
+                                      </div>
+                                            <div class="form-actions form-group col-md-3" style="padding-top: 30px;"><button type="submit" class="btn btn-success">Actualizar</button></div>
+                                     </div>
+                                     
+                                 </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+  <!-- Content Header (Page header) -->
+  

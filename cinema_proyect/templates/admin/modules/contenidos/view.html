@@ -1,0 +1,121 @@
+
+
+<div class="content" style="min-height: 480px">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row" >
+                    
+                    <div class="col col-lg-12">
+                      <div class="card" >
+                        <div class="card-header">
+                            <strong>Registro Contenido</strong>
+                        </div>
+                            <div class="card-body">
+                                <form method="post" action="/registro/{{module}}">
+                                    <div class="row form-group">
+                                              <div class="col-md-4"><label for="codigo" class="form-control-label">Codigo: </label>
+                                                <input type="text" name="codigo" placeholder="Codigo" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="clasificacion" class="form-control-label">Clasificación: </label>
+                                                <input type="text" name="clasificacion" placeholder="clasificacion" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="pais" class="form-control-label">Pais: </label>
+                                                <input type="text" name="pais" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="titulo" class="form-control-label">Titulo: </label>
+                                                <input type="text" name="titulo" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="genero" class="form-control-label">Género: </label>
+                                                <input type="text" name="genero" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="duracion" class="form-control-label">Duración: </label>
+                                                <input type="time" name="duracion" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="idioma" class="form-control-label">Idioma: </label>
+                                                <input type="text" name="idioma" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="fecha_e" class="form-control-label">Fecha Estreno: </label>
+                                                <input type="date" name="fecha_e" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="tipo" class="form-control-label">Tipo: </label>
+                                                <input type="text" name="tipo" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="director" class="form-control-label">Director: </label>
+                                                <input type="text" name="director" class="form-control">
+                                              </div>
+                                              <div class="col-md-4"><label for="sinopsis" class="form-control-label">Sinopsis: </label>
+                                                <textarea name="sinopsis" class="form-control"></textarea>
+                                              </div>
+                                              
+                                            
+                                            <div class="form-actions form-group col-md-3" style="padding-top: 30px;"><button type="submit" class="btn btn-success">Registrar</button></div>
+                                     </div>
+                                     
+                                 </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-12">
+                        <div class="card" >
+                          <div class="card-header">
+                              <strong>Contenidos</strong>
+                          </div>
+                              <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                                    <thead>
+                                        <tr role="row">
+                                            
+                                            <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Feha: activate to sort column ascending" style=" text-align: center;">Codigo</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Clasificación</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">País</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Título</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Género</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Duración</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Idioma</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Fecha Estreno</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Tipo</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Director</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;">Sinopsis</th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;"></th>
+                                            <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Hora_I: activate to sort column ascending" style=" text-align: center;"></th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    
+                                    {% for dato in datos %}
+                                    <tr role="row" class="odd">
+                                            <td>{{ dato.0 }}</td>
+                                            <td>{{ dato.1}}</td>
+                                            <td>{{ dato.2 }}</td>
+                                            <td>{{ dato.3 }}</td>
+                                            <td>{{ dato.4 }}</td>
+                                            <td>{{ dato.5 }}</td>
+                                            <td>{{ dato.6 }}</td>
+                                            <td>{{ dato.7 }}</td>
+                                            <td>{{ dato.8 }}</td>
+                                            <td>{{ dato.9 }}</td>
+                                            <td>{{ dato.10 }}</td>
+                                            <td><a href="/editar/{{module}}/{{dato.0}}"><button type="button" class="btn btn-primary">Editar</button></a></td>
+                                            <td><a href="/eliminar/{{module}}/{{dato.0}}" class="btn btn-danger btn-delete">Eliminar</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                    </tbody>
+                                </table>
+                              </div>
+  
+                          </div>
+                      </div>
+
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+  <!-- Content Header (Page header) -->
+  

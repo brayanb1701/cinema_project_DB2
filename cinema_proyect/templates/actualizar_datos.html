@@ -1,0 +1,122 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends "layout.html" %}
+	<!-- header-section-starts -->
+{% block body %}
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a href="/"><div class="hm"><i class="home1"></i><i class="home2"></i></div></a></li>
+					<li><a href="/reviews"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					
+					{% if ident %}
+					<li><a href="/consulta_recargas"><div class="bk"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					<li><a href="/consulta_tiquetes"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li>
+					
+
+					{% endif %}
+					<li><a chref="/contact"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+				</ul>
+			</div>
+		<div class="main">
+		<div class="contact-content">
+			<div class="top-header span_top">
+				<div class="logo">
+					<a href="/"><img src="{{url_for('static', filename='images/logo.png')}}" alt="" /></a>
+					<p>Movie Theater</p>
+				</div>
+				<div class="search" style="border: 0; margin-top: 0;">
+					{% if ident %}
+<a href="logout" class="b-home" style="margin-top: 0; float: right;">Log Out</a>
+{% else %}
+<a href="/log_in" class="b-home" style="margin-top: 0; float: right;">Log In</a>
+{% endif %}
+				</div>
+<div class="search v-search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!---contact-->
+<div class="main-contact">
+		 <h3 class="head">Perfil</h3>
+		 <p>Actualiza tu perfil</p>
+		 <div class="contact-form">
+			 <form action="/actualizar_datos2" method="POST">
+				 <div class="col-md-6 contact-left">
+					 {% if perfil %}
+					  <input type="text" name="nombres" value="{{perfil.0}}"  placeholder="Nombres" required/>
+					  <input type="text" name="apellidos" value="{{perfil.1}}"  placeholder="Apellidos" required/>
+					  <input type="text" name="direccion" value="{{perfil.2}}"  placeholder="Dirección" required/>
+					  
+					  
+				  </div>
+				  <div class="col-md-6 contact-right">
+					<input type="text" name="email" value="{{perfil.3}}"  placeholder="Email" required/>
+					<input type="text" name="celular" value="{{perfil.4}}"  placeholder="Celular" required/>
+					 <input type="submit" value="ACTUALIZAR"/>
+					 {% endif %}
+				 </div>
+				 <div class="clearfix"></div>
+			 </form>
+		 </div>
+		 <h3 class="head">Contraseña</h3>
+		 <p>Actualiza tu contraseña</p>
+		 {% with messages = get_flashed_messages()  %}
+      {% if messages %}
+      {% for message in messages %}
+		 <p>{{ message}}</p>
+		 {% endfor %}
+      {% endif %}
+      {% endwith %}
+		 <div class="contact-form">
+			<script>
+				function comprobarClave(){
+					pass1 = document.f2.pass1.value;
+					pass2 = document.f2.pass2.value;
+					if (pass1!="" && pass2!=""){
+						if (pass1 == pass2){
+							document.f2.submit();
+						}
+						else{
+							alert("Las contraseñas no coinciden, verificar.")
+							document.f2.pass2.value="";
+							document.f2.pass1.value="";
+							document.f2.pass1.focus();
+						}
+					}
+					else{
+						alert("No ha llenado todos los datos")
+					}
+				}
+				</script>
+			 <form action="/actualizar_datos3" name="f2" method="POST">
+				 <div class="col-md-6 contact-left">
+					 {% if perfil %}
+					 
+					  <input type="password" name="pass_act" placeholder="Contraseña Actual" required/>
+					  <br><br><input type="password" name="pass1" placeholder="Contraseña Nueva" required/>
+					  <br><br><input type="password" name="pass2" placeholder="Repetir contraseña" required/>
+					  <br><br><input type="button" onclick="comprobarClave()" value="CAMBIAR"/>
+					  {% endif %}
+				  </div>
+				 <div class="clearfix"></div>
+			 </form>
+	     </div>
+		 
+</div>
+	{% endblock %}
+{% block theend %}
+	</div>
+	<div class="clearfix"></div>
+	</div>
+</body>
+</html>
+{% endblock %}

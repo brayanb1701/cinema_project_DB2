@@ -1,0 +1,85 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% extends "layout.html" %}
+	<!-- header-section-starts -->
+{% block body %}
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a href="/"><div class="hm"><i class="home1"></i><i class="home2"></i></div></a></li>
+					<li><a href="/reviews"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					
+					{% if ident %}
+					<li><a href="/consulta_recargas"><div class="bk"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					<li><a href="/consulta_tiquetes"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li>
+					
+
+					{% endif %}
+					<li><a class="active" href="/contact"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+				</ul>
+			</div>
+		<div class="main">
+		<div class="contact-content">
+			<div class="top-header span_top">
+				<div class="logo">
+					<a href="/"><img src="{{url_for('static', filename='images/logo.png')}}" alt="" /></a>
+					<p>Movie Theater</p>
+				</div>
+				<div class="search" style="border: 0; margin-top: 0;">
+					{% if ident %}
+<a href="logout" class="b-home" style="margin-top: 0; float: right;">Log Out</a>
+{% else %}
+<a href="/log_in" class="b-home" style="margin-top: 0; float: right;">Log In</a>
+{% endif %}
+				</div>
+<div class="search v-search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!---contact-->
+<div class="main-contact">
+		 <h3 class="head">CONTACTO</h3>
+		 <p>Deja tus quejas, reclamos y sugerencias</p>
+		 <div class="contact-form">
+			 <form action="/registro_mensaje" method="POST">
+				 <div class="col-md-6 contact-left">
+					 {% if info_c %}
+					  <input type="text" name="nombre" value="{{info_c.0}}" readonly placeholder="Name" required/>
+					  <input type="text" name="email" value="{{info_c.1}}" readonly placeholder="E-mail" required/>
+					  <input type="text" name="telefono" value="{{info_c.2}}" readonly placeholder="Phone" required/>
+					  {% else %}
+					  <input type="text" name="nombre" placeholder="Name" required/>
+					  <input type="text" name="email" placeholder="E-mail" required/>
+					  <input type="text" name="telefono" placeholder="Phone" required/>
+					  {% endif %}
+				  </div>
+				  <div class="col-md-6 contact-right">
+					 <textarea name="mensaje" placeholder="Message"></textarea>
+					 <input type="submit" value="SEND"/>
+				 </div>
+				 <div class="clearfix"></div>
+			 </form>
+	     </div>
+		 <div class="contact_info">
+			 <h3>Find Us Here</h3>
+			 <div class="map">
+				<iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#000;text-align:left;font-size:12px">View Larger Map</a></small>
+			</div>
+	 </div>
+</div>
+	{% endblock %}
+{% block theend %}
+	</div>
+	<div class="clearfix"></div>
+	</div>
+</body>
+</html>
+{% endblock %}
